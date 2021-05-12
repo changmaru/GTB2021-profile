@@ -17,7 +17,7 @@
 			<section>
 				<div class="flex">
 					<div class="profile-image">
-						<img src="http://118.27.107.81/nakajima/avator.jpg" alt="【画像】顔写真">
+						<img src="src/changmaru.jpg" alt="【画像】顔写真">
 					</div>
 					<div class="profile-text">
 						<h1>changamaru</h1>
@@ -42,34 +42,39 @@
 				<h2 class="heading">在宅中の暇つぶし</h2>
 				<ol class="ranking">
 					<li ><a href="https://www.capcom.co.jp/monsterhunter/rise/" target="_blank">モンスターハンターライズ</a></li>
-					<li><a>資格の勉強</a></li>
-					<li><a>読書</a></li>
-					<li><a>映画</a></li>
-					<li><a>いろいろ</a></li>
+					<li>資格の勉強</li>
+					<li>読書</li>
+					<li>映画</li>
+					<li>リングフィットアドベンチャー</li>
 				</ol>
 			</section>
 
 			<section>
 				<h2 class="heading">タブの切り替え</h2>
-				<ul class="tab">
+				<ul class="tab flex">
 					<li>
-						<input type="radio" name="tab-change" id="tab1">
-						<label for="tab1">タブ🐽①</label>
-						<p>本文1</p>
+						<input type="radio" name="tab-change" id="tab1" checked>
+						<label for="tab1">タブ🐽</label>
+						<p>タブとめちゃくちゃ戦った</p>
 					</li>
 					<li>
 						<input type="radio" name="tab-change" id="tab2">
-						<label for="tab2">タブ🐷②</label>
-						<p>本文2</p>
+						<label for="tab2">タブ🐷</label>
+						<p>拳で語り合おうぜ✊</p>
 					</li>
 				</ul>
 			</section>
 
 			<section>
 				<h2 class="heading">実は…</h2>
-				<input type="checkbox" name="">
-				<div>
-					<p>資格マニアです</p>
+				<input id="accordion" type="checkbox">
+				<label for="accordion" class="accordion-toggle">
+					<span>CLOSE</span>
+					<span>OPEN</span>
+				</label>
+				<div class="accordion-text">
+					<p class="animation">教員免許持ってます✍️</p>
+					<p>高校の情報科です！</p>
 				</div>
 			</section>
 		</main>

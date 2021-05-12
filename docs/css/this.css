@@ -10,6 +10,7 @@ section {
     background-color: whitesmoke;
     padding: 40px;
     border-radius: 20px;
+    height: 100%;
 }
 
 section + section {
@@ -36,12 +37,24 @@ section + section {
     margin-left: 20px;
 }
 
+.profile-text dl {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-width: 0 0 0 8px;
+    border-color: darkslategrey;
+    border-style: solid;
+}
+.profile-text dt {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
 .profile-description {
     margin-top: 20px;
 }
 
 a {
-    color: skyblue
+    color: royalblue
 }
 
 a:hover {
@@ -66,17 +79,14 @@ div {
 
 .ranking li:nth-child(1) {
     background-color: #f1c405;
-    opacity: 0.5;
 }
 
 .ranking li:nth-child(2) {
     background-color: #bdc3c7;
-    opacity: 0.5;
 }
 
 .ranking li:nth-child(3) {
     background-color: #e67e22;
-    opacity: 0.5;
 }
 
 .heading {
@@ -115,10 +125,129 @@ div {
     left: 50%;
 }
 
+.tab {
+}
+.tab li {
+    width: 100%;
+}
+.tab input {
+    display: none;
+}
+.tab label {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px 20px;
+    display: block;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+}
+.tab li + li p {
+    margin-left: -100%;
+    border-radius: 10px 0 10px 10px;
+}
+.tab input:checked ~ label{
+    background-color: white;
+}
 .tab p {
+    padding: 20px 40px;
+    background-color: white;
+    border-radius: 0 10px 10px 10px;
+    height: auto;
+    width: 200%;
 	display: none;
 }
-
 .tab input:checked ~ p{
     display: block;
+}
+
+@keyframes change-color {
+    0% {
+        color: salmon;
+    }
+    20% {
+        color: khaki;
+    }
+    40% {
+        color: mediumseagreen;
+    }
+    60% {
+        color: steelblue;
+    }
+    80% {
+        color: slateblue;
+    }
+    100% {
+        color: salmon;
+    }
+}
+
+.animation {
+    animation: change-color 3s linear infinite;
+}
+
+#accordion {
+    display: none;
+}
+
+.accordion-toggle {
+    background-color: white;
+    border: darkslategrey solid 4px;
+    display: block;
+    height: 40px;
+    width: 80px;
+    margin: 0 auto;
+    border-radius: 20px;
+    position: relative;
+    transition: 400ms;
+}
+
+.accordion-toggle::before {
+    content: "";
+    background-color: darkslategrey;
+    height: 28px;
+    width: 28px;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: 200ms;
+}
+.accordion-toggle span {
+    margin-top: -12px;
+    top: 50%;
+    position: absolute;
+}
+
+.accordion-toggle span:nth-child(1) {
+    right: 100%;
+    margin-right: 20px;
+}
+.accordion-toggle span:nth-child(2) {
+    left: 100%;
+    margin-left: 20px;
+}
+
+#accordion:checked + .accordion-toggle {
+    background-color: aquamarine;
+    transition: 400ms;
+}
+
+#accordion:checked ~ .accordion-toggle::before {
+    left: 42px;
+    transition: 200ms;
+}
+
+.accordion-text {
+    text-align: center;
+    margin: 20px;
+    background-color: white;
+    border-radius: 12px;
+    height: 0;
+    overflow: hidden;
+    transition: 600ms;
+}
+#accordion:checked ~ .accordion-text {
+    padding: 20px;
+    height: 100px;
+    transition: 600ms;
 }
